@@ -4,7 +4,7 @@ import HomePage from "./pages/homepage/homepage.components";
 import ShopPage from "./pages/shop/shop.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.components";
 import Header from "./components/header/header.components";
-import { setCurrentUser } from "./redux/user/user.actions";
+import setCurrentUser from "./redux/user/user.actions";
 
 import { Route, Routes, Navigate } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
