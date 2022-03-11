@@ -10,13 +10,16 @@ import Header from "./components/header/header.components";
 import setCurrentUser from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
+
 // import { selectShopCollectionsForPreview } from "./redux/shop/shop.selectors";
 
 import { Route, Routes, Navigate } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 const App = ({ setCurrentUser, currentUser }) => {
+  //const currentUser = useSelector(selectCurrentUser);
+
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
